@@ -34,7 +34,7 @@ The files and folders structure consists of [!includes](./Projects/!includes/) d
 - Polynomials
 
   - [Polynomials with arrays](./Projects/08%20Poly/)
-  - [Polynomials without arrays](./Projects/13%20\Poly/)
+  - [Polynomials without arrays](./Projects/13%20Poly/)
 
 - [Game of Life with and without SFML](./Projects/14%20Predator%20Prey/)
 - [Graphing Calculator with SFML](./Projects/!includes/Graph)
