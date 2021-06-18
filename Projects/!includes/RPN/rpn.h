@@ -7,30 +7,25 @@
 #include "../../!includes/Stack/stack.h"
 #include "../../!includes/Token/token.h"
 
-class RPN
-{
-public:
+class RPN {
+   public:
+    RPN();
 
-    RPN( );
-
-    RPN( Queue<Token*> input);
+    RPN(Queue<Token*> input);
 
     void Print();
 
-    double operator ()(const double &value);
+    double operator()(const double& value);
 
     double eval_trig(const string& trig, const double& x);
 
-    friend ostream& operator << (ostream& outs, const RPN& value)
-    {
-        outs << value._rpn<< endl;
+    friend ostream& operator<<(ostream& outs, const RPN& value) {
+        outs << value._rpn << endl;
         return outs;
     }
 
-
-private:
-
+   private:
     Queue<Token*> _rpn;
 };
 
-#endif // RPN_H
+#endif  // RPN_H

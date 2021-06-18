@@ -4,15 +4,11 @@
 #include <iostream>
 #include <string>
 
-#include "../../!includes/Token/token.h"
 #include "../../!includes/Token/operator.h"
+#include "../../!includes/Token/token.h"
 
-
-class Function: public Operator
-{
-
-public:
-
+class Function : public Operator {
+   public:
     // ========================= ctor's ========================
 
     ////////////////////////////////////////////////////////////
@@ -21,9 +17,7 @@ public:
     /// \param string         string assigned to the function
     ///
     ////////////////////////////////////////////////////////////
-    Function( std::string str );
-
-
+    Function(std::string str);
 
     // ======================== accessors =======================
 
@@ -33,13 +27,11 @@ public:
     /// \return function as a string
     ///
     ////////////////////////////////////////////////////////////
-    string get_operator( );
+    string get_operator();
 
-private:
-
+   private:
     /// string to hold function
     std::string _function;
-
 };
 
-#endif // FUNCTION_H
+#endif  // FUNCTION_H

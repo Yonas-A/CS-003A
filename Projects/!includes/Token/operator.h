@@ -6,13 +6,10 @@
 
 #include "../../!includes/Token/token.h"
 
+using namespace std;
 
-using namespace  std;
-
-class Operator: public Token
-{
-public:
-
+class Operator : public Token {
+   public:
     // =======================  ctor's  ========================
 
     ////////////////////////////////////////////////////////////
@@ -21,8 +18,7 @@ public:
     /// \param string  assigned to the member variable _operator
     ///
     ////////////////////////////////////////////////////////////
-    Operator( std::string str );
-
+    Operator(std::string str);
 
     // ======================= accessors =======================
 
@@ -32,7 +28,7 @@ public:
     /// \return operator as a string
     ///
     ////////////////////////////////////////////////////////////
-     std::string get_operator( );
+    std::string get_operator();
 
     ////////////////////////////////////////////////////////////
     /// \brief get the operator's precedence
@@ -44,7 +40,7 @@ public:
     /// \return an int identifying the current operators precedence
     ///
     ////////////////////////////////////////////////////////////
-    int get_precedence( ) const;
+    int get_precedence() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief get operator's token type
@@ -53,9 +49,7 @@ public:
     /// a TokenType of operators
     ///
     ////////////////////////////////////////////////////////////
-    virtual Token_Type get_type( ) override;
-
-
+    virtual Token_Type get_type() override;
 
     // ======================= display =======================
 
@@ -63,18 +57,14 @@ public:
     /// \brief print Operator onto the console
     ///
     ////////////////////////////////////////////////////////////
-    virtual void print( ) override ;
+    virtual void print() override;
 
-
-private:
-
+   private:
     /// String to hold current operator
-     std::string _operator;
+    std::string _operator;
 
     /// a type int to hold precedence for different operators
-    int _precedence ;
-
-
+    int _precedence;
 
     // ======================= modifier =======================
 
@@ -84,8 +74,7 @@ private:
     ///        such as +, - , * ,etc ...
     ///
     ////////////////////////////////////////////////////////////
-    void assign_precedence( );
-
+    void assign_precedence();
 };
 
-#endif // OPERATOR_H
+#endif  // OPERATOR_H

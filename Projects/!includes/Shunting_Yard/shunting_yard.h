@@ -1,35 +1,28 @@
 #ifndef SHUNTING_YARD_H
 #define SHUNTING_YARD_H
 
-#include <iostream>
-
 #include <string.h>
 
-#include "../../!includes/Token/token.h"
+#include <iostream>
+
 #include "../../!includes/Queue/queue.h"
+#include "../../!includes/Token/token.h"
 
-class Shunting_Yard
-{
-
-public:
-
+class Shunting_Yard {
+   public:
     Shunting_Yard();
 
-    Shunting_Yard( Queue<Token*> input );
+    Shunting_Yard(Queue<Token*> input);
 
-    Queue< Token* > Post_Fix( );
+    Queue<Token*> Post_Fix();
 
-    friend ostream& operator<<(ostream& outs,const Shunting_Yard& s)
-    {
+    friend ostream& operator<<(ostream& outs, const Shunting_Yard& s) {
         outs << s._infix << endl;
         return outs;
     }
 
-
-private:
-
+   private:
     Queue<Token*> _infix;
-
 };
 
-#endif // SHUNTING_YARD_H
+#endif  // SHUNTING_YARD_H

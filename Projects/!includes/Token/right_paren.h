@@ -6,11 +6,8 @@
 
 #include "../../!includes/Token/token.h"
 
-
-class Right_Paren: public Token
-{
-public:
-
+class Right_Paren : public Token {
+   public:
     // ========================= ctor's ========================
 
     ////////////////////////////////////////////////////////////
@@ -19,9 +16,7 @@ public:
     /// \param string assigned to the member variable _r_parenthesis
     ///
     ////////////////////////////////////////////////////////////
-    Right_Paren( std::string str );
-
-
+    Right_Paren(std::string str);
 
     // ======================== accessors =======================
 
@@ -31,7 +26,7 @@ public:
     /// \return _r_parenthesis as a string
     ///
     ////////////////////////////////////////////////////////////
-    std::string get_Right_Paren( );
+    std::string get_Right_Paren();
 
     ////////////////////////////////////////////////////////////
     /// \brief Get Right Parenthesis' token type
@@ -40,9 +35,7 @@ public:
     ///         a TokenType of right Parenthesis
     ///
     ////////////////////////////////////////////////////////////
-    virtual Token_Type get_type( ) override;
-
-
+    virtual Token_Type get_type() override;
 
     // ======================== display =======================
 
@@ -50,14 +43,11 @@ public:
     /// \brief print Right Parenthesis onto the console
     ///
     ////////////////////////////////////////////////////////////
-    virtual void print ( ) override;
+    virtual void print() override;
 
-
-private:
-
+   private:
     /// a string that'll hold right parenthesis
     std::string _r_parenthesis;
-
 };
 
-#endif // RIGHT_PAREN_H
+#endif  // RIGHT_PAREN_H

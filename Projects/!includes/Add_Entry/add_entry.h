@@ -14,8 +14,8 @@ T* add_entry(T* list, const T& new_entry,int& size, int& capacity);
 
 template <typename T>
 T* allocate( int capacity );
-///@pre: takes an int variable for the capacity of the array
-///@post: allocate a new array of with max capacity = capacity
+//@pre: takes an int variable for the capacity of the array
+//@post: allocate a new array of with max capacity = capacity
 ///         \returns  pointer to this array
 
 template <typename T>

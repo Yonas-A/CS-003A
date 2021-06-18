@@ -1,17 +1,14 @@
 #ifndef VARIABLE_H
 #define VARIABLE_H
 
-#include <iostream>
-
 #include <string.h>
+
+#include <iostream>
 
 #include "../../!includes/Token/token.h"
 
-
-class Variable : public Token
-{
-public:
-
+class Variable : public Token {
+   public:
     // ========================= ctor's ========================
 
     ////////////////////////////////////////////////////////////
@@ -20,9 +17,7 @@ public:
     /// \param string  assigned to the member variable _operator
     ///
     ////////////////////////////////////////////////////////////
-    Variable( std::string var);
-
-
+    Variable(std::string var);
 
     // ======================== accessors =======================
 
@@ -43,22 +38,17 @@ public:
     ////////////////////////////////////////////////////////////
     virtual Token_Type get_type() override;
 
-
-
     // ======================== display =======================
 
     ////////////////////////////////////////////////////////////
     /// \brief print operator onto the console
     ///
     ////////////////////////////////////////////////////////////
-    virtual void print() override ;
+    virtual void print() override;
 
-
-private:
-
+   private:
     /// a string to hold variable
     std::string _var;
-
 };
 
-#endif // VARIABLE_H
+#endif  // VARIABLE_H

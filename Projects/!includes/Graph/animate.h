@@ -7,12 +7,8 @@
 #include "../../!includes/Graph/sidebar.h"
 #include "../../!includes/RPN/rpn.h"
 
-
-class Animate
-{
-
-public:
-
+class Animate {
+   public:
     Animate(Graph_Info* g_info);
 
     void Draw();
@@ -24,13 +20,11 @@ public:
     void drawGraph();
     //draws the points of a given equation
 
-
     void loadFont();
     //loads the font and sets the size of text
 
-
     void processEvents();
-     // handles keyboard and mouse events
+    // handles keyboard and mouse events
 
     void render();
 
@@ -39,29 +33,22 @@ public:
     void update();
     // prepare the next frame
 
-
-
-private:
-
+   private:
     sf::RenderWindow window;
 
     Plot plot;
 
     Graph_Info* info;
 
-    Sidebar sidebar;                //rectangular message sidebar
+    Sidebar sidebar;  //rectangular message sidebar
 
-    sf::RectangleShape mypoint;      //draws all shapes on screen
+    sf::RectangleShape mypoint;  //draws all shapes on screen
 
+    sf::Font font;  //font to draw on main screen
 
-    sf::Font font;                  //font to draw on main screen
+    sf::Text textLabel;  //text to draw on main screen
 
-    sf::Text textLabel;           //text to draw on main screen
-
-
-    bool mouseIn;                   //mouse is in the screen
-
+    bool mouseIn;  //mouse is in the screen
 };
 
-
-#endif // ANIMATE_H
+#endif  // ANIMATE_H

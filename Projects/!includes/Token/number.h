@@ -6,11 +6,8 @@
 
 #include "../../!includes/Token/token.h"
 
-
-class Number: public Token
-{
-public:
-
+class Number : public Token {
+   public:
     // =======================  ctor's  ========================
 
     ////////////////////////////////////////////////////////////
@@ -19,7 +16,7 @@ public:
     /// \param Double assigned to member variable _num
     ///
     ////////////////////////////////////////////////////////////
-    Number( double number );
+    Number(double number);
 
     ////////////////////////////////////////////////////////////
     /// \brief Construct  Number Class from a string
@@ -28,10 +25,7 @@ public:
     ///        member variable _num
     ///
     ////////////////////////////////////////////////////////////
-    Number( std::string s );
-
-
-
+    Number(std::string s);
 
     // ======================= accessors =======================
 
@@ -41,7 +35,7 @@ public:
     /// \return Number as a type double
     ///
     ////////////////////////////////////////////////////////////
-    double get_num( );
+    double get_num();
 
     ////////////////////////////////////////////////////////////
     /// \brief Get Number's token type
@@ -52,22 +46,16 @@ public:
     ////////////////////////////////////////////////////////////
     virtual Token_Type get_type() override;
 
-
-
-
     // ======================= display =========================
     ////////////////////////////////////////////////////////////
     /// \brief print Number onto the console
     ///
     ////////////////////////////////////////////////////////////
-    virtual void print() override ;
+    virtual void print() override;
 
-
-private:
-
+   private:
     /// a type double that'll hold Number
     double _num;
-
 };
 
-#endif // NUMBER_H
+#endif  // NUMBER_H

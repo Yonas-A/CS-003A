@@ -1,10 +1,11 @@
-#include <iostream>
+#include "../../!includes/Shunting_Yard/shunting_yard.h"
 
 #include <string.h>
 
+#include <iostream>
+
 #include "../../!includes/Queue/queue.h"
 #include "../../!includes/Stack/stack.h"
-#include "../../!includes/Shunting_Yard/shunting_yard.h"
 #include "../../!includes/Token/function.h"
 #include "../../!includes/Token/left_paren.h"
 #include "../../!includes/Token/number.h"
@@ -12,21 +13,14 @@
 #include "../../!includes/Token/right_paren.h"
 #include "../../!includes/Token/variable.h"
 
-
-Shunting_Yard::Shunting_Yard( )
-{
-
+Shunting_Yard::Shunting_Yard() {
 }
 
-Shunting_Yard::Shunting_Yard( Queue<Token *> input): _infix(input)
-{
-
+Shunting_Yard::Shunting_Yard(Queue<Token*> input) : _infix(input) {
 }
 
-Queue<Token*> Shunting_Yard::Post_Fix()
-{
-
- /**
+Queue<Token*> Shunting_Yard::Post_Fix() {
+    /**
   * STEPS:
   * if token is number or variable push into postfix queue
   * if left paranthesis push it into operator stack
@@ -41,27 +35,21 @@ Queue<Token*> Shunting_Yard::Post_Fix()
   */
 
     int unused(0);
-    Queue<Token*> post_fix;    // holds the post_fix expression
+    Queue<Token*> post_fix;        // holds the post_fix expression
     Stack<Token*> operator_stack;  //hold operators while converting
 
-    while( !_infix.Empty( ) )
-    {
+    while (!_infix.Empty()) {
         Token* item = _infix.Pop();
 
-        if(item->get_type() == numbers || item->get_type() == variables )
-        {
+        if (item->get_type() == numbers || item->get_type() == variables) {
             post_fix.Push(item);
         }
 
-        else if( item ->get_type() == operators )
-        {
-            while( ( !operator_stack.Empty() ) &&
-          ( operator_stack.Top( unused )->get_type() != L_Parenthesis )
-                   &&
-                 ( static_cast<Operator*>( operator_stack.Top(unused))->
-                            get_precedence() >=
-                  static_cast<Operator*>(item)->get_precedence() )   )
-            {
+        else if (item->get_type() == operators) {
+            while ((!operator_stack.Empty()) &&
+                   (operator_stack.Top(unused)->get_type() != L_Parenthesis) &&
+                   (static_cast<Operator*>(operator_stack.Top(unused))->get_precedence() >=
+                    static_cast<Operator*>(item)->get_precedence())) {
                 Token* operands = operator_stack.Pop();
                 post_fix.Push(operands);
             }
@@ -69,16 +57,12 @@ Queue<Token*> Shunting_Yard::Post_Fix()
             operator_stack.Push(item);
         }
 
-        else if( item->get_type() == L_Parenthesis )
-        {
+        else if (item->get_type() == L_Parenthesis) {
             operator_stack.Push(item);
         }
 
-        else if( item->get_type() == R_Parenthesis )
-        {
-            while( operator_stack.Top(unused)->get_type()
-                   != L_Parenthesis )
-            {
+        else if (item->get_type() == R_Parenthesis) {
+            while (operator_stack.Top(unused)->get_type() != L_Parenthesis) {
                 Token* operands = operator_stack.Pop();
                 post_fix.Push(operands);
             }
@@ -86,18 +70,14 @@ Queue<Token*> Shunting_Yard::Post_Fix()
         }
     }
 
-    while( ! operator_stack.Empty())
-    {
-        if( operator_stack.Top(unused)->get_type() == L_Parenthesis )
-        {
+    while (!operator_stack.Empty()) {
+        if (operator_stack.Top(unused)->get_type() == L_Parenthesis) {
             operator_stack.Pop();
         }
 
-        else
-        {
+        else {
             Token* operands = operator_stack.Pop();
             post_fix.Push(operands);
-
         }
     }
 

@@ -1,40 +1,34 @@
-#include <iostream>
+#include "../../!includes/Token/token.h"
 
 #include <string.h>
 
-#include "../../!includes/Token/token.h"
+#include <iostream>
 
 // =========================================================
 // ctor's
 
-Token::Token( )
-{
-
+Token::Token() {
 }
 
-Token::Token( const std::string& str )
-{
-    _input = str ;
+Token::Token(const std::string& str) {
+    _input = str;
 }
 
 // =========================================================
 // accessors
 
-Token_Type Token::get_type()
-{
+Token_Type Token::get_type() {
     return numbers;
 }
 
 // =========================================================
 // display
 
-void Token::print()
-{
+void Token::print() {
     std::cout << " " << _input << " ";
 }
 
-std::ostream& operator <<(std::ostream& outs, Token* ptr)
-{
-    ptr ->print( );
+std::ostream& operator<<(std::ostream& outs, Token* ptr) {
+    ptr->print();
     return outs;
 }
