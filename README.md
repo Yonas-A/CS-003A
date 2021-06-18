@@ -34,7 +34,7 @@ The files and folders structure consists of [!includes](./Projects/!includes/) d
 - Polynomials
 
   - [Polynomials with arrays](./Projects/08%20Poly/)
-  - [Polynomials without arrays](./Projects/13%20Poly/)
+  - [Polynomials with Sorted List](./Projects/13%20Poly/)
 
 - [Game of Life with and without SFML](./Projects/14%20Predator%20Prey/)
 - [Graphing Calculator with SFML](./Projects/!includes/Graph)
@@ -63,4 +63,6 @@ The files and folders structure consists of [!includes](./Projects/!includes/) d
 
 Clone or download this project. Then run each numbered directories as separate workspaces.
 
-_NOTE_ On some IDEs it may require to use `.cpp` instead of `.h` when including paths to some libraries that have both a `source` and `header` files
+_NOTE_
+
+On some IDEs it may require to use `.cpp` instead of `.h` when including paths to some libraries that have both a `source` and `header` files
