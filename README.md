@@ -1,4 +1,4 @@
-# CS 003A - FUNDAMENTALS OF COMPUTER SCIENCE II at Pasadena City College
+## CS 003A - FUNDAMENTALS OF COMPUTER SCIENCE II at Pasadena City College
 
 ## Description
 
